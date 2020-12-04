@@ -11,6 +11,9 @@ use Magento\Ui\Component\Listing\Columns\Column;
 
 class Actions extends Column
 {
+    const EDIT_URL = 'sampleentitypage/sampleentity/edit';
+    const REMOVE_URL = 'sampleentitypage/sampleentity/remove';
+    const DUPLICATE_URL = 'sampleentitypage/sampleentity/duplicate';
 
     /**
      * @var UrlInterface
@@ -30,7 +33,8 @@ class Actions extends Column
         UrlInterface $urlBuilder,
         array $components = [],
         array $data = []
-    ) {
+    )
+    {
         $this->urlBuilder = $urlBuilder;
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }
@@ -50,21 +54,21 @@ class Actions extends Column
                 $item[$this->getData('name')] = [
                     'edit' => [
                         'href' => $this->urlBuilder->getUrl(
-                            'sampleentitypage/sampleentity/edit',
+                            static::EDIT_URL,
                             ['id' => $item['id']]
                         ),
                         'label' => __('Edit')
                     ],
                     'remove' => [
                         'href' => $this->urlBuilder->getUrl(
-                            'sampleentitypage/sampleentity/remove',
+                            static::REMOVE_URL,
                             ['id' => $item['id']]
                         ),
                         'label' => __('Remove')
                     ],
                     'duplicate' => [
                         'href' => $this->urlBuilder->getUrl(
-                            'sampleentitypage/sampleentity/dublicate',
+                            static::DUPLICATE_URL,
                             ['id' => $item['id']]
                         ),
                         'label' => __('Duplicate')
@@ -72,7 +76,6 @@ class Actions extends Column
                 ];
             }
         }
-
         return $dataSource;
     }
 }
