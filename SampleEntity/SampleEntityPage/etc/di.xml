@@ -4,6 +4,7 @@
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="sample_entity_page_listing_data_source" xsi:type="string">SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntity\Grid\Collection</item>
+                <item name="sample_entity_page_form_data_source" xsi:type="string">SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntity\Grid\Collection</item>
             </argument>
         </arguments>
     </type>

@@ -13,9 +13,7 @@ class Edit extends Action
 
     public function execute()
     {
-        $rowId = (int) $this->getRequest()->getParam('id');
-//        var_dump($rowId);
-        $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
-        return $resultPage;
+//        $rowId = (int) $this->getRequest()->getParam('id');
+        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
 }

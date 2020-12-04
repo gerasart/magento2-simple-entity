@@ -22,9 +22,6 @@ class DataProvider extends AbstractDataProvider
     protected $dataPersistor;
 
 
-
-
-
     public function __construct($name, $primaryFieldName, $requestFieldName, array $meta = [], array $data = [])
     {
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);

@@ -6,19 +6,25 @@
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">sample_entity_page_form.sample_entity_page_form_data_source</item>
+            <item name="deps" xsi:type="string">sample_entity_page_form.sample_entity_page_form_data_source</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
+
+
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="string">SampleEntity\SampleEntityPage\Block\Adminhtml\Buttons\Save</item>
+        </item>
+
     </argument>
 
     <settings>
         <buttons>
-<!--            <button name="save" class="Magento\Catalog\Block\Adminhtml\Product\Edit\Button\CreateCategory"/>-->
-            <button name="back" class="Magento\Catalog\Block\Adminhtml\Product\Edit\Button\Back"/>
+            <button name="back">
+                <url path="*/*/index"/>
+                <class>back</class>
+                <label translate="true">Back</label>
+            </button>
         </buttons>
-        <ajaxSaveType>simple</ajaxSaveType>
-        <deps>
-            <dep>sample_entity_page_form.sample_entity_page_form_data_source</dep>
-        </deps>
     </settings>
 
     <dataSource name="sample_entity_page_form_data_source">
@@ -27,9 +33,6 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
-        <settings>
-            <submitUrl path="sampleentitypage/sampleentity/save"/>
-        </settings>
         <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
                       name="sample_entity_page_form_data_source">
             <settings>
@@ -39,39 +42,39 @@
         </dataProvider>
     </dataSource>
 
-    <fieldset name="main_fieldset">
-        <settings>
-            <label translate="true">Edit Sample Entity</label>
-        </settings>
-        <fieldset name="fieldset_group">
+    <fieldset name="sample_entity">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">Fieldset</item>
+            </item>
+        </argument>
+
+        <field name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Fields</item>
-                    <item name="collapsible" xsi:type="boolean">true</item>
-                    <item name="opened" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string">Name</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">sample_entity</item>
                 </item>
             </argument>
-            <field name="name">
-                <argument name="data" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Name</item>
-                        <item name="visible" xsi:type="boolean">true</item>
-                        <item name="dataType" xsi:type="string">text</item>
-                        <item name="formElement" xsi:type="string">input</item>
-                    </item>
-                </argument>
-            </field>
-            <field name="type">
-                <argument name="data" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Type</item>
-                        <item name="visible" xsi:type="boolean">true</item>
-                        <item name="dataType" xsi:type="string">text</item>
-                        <item name="formElement" xsi:type="string">input</item>
-                    </item>
-                </argument>
-            </field>
-        </fieldset>
+        </field>
+
+        <field name="type">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Type</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">sample_entity</item>
+                </item>
+            </argument>
+        </field>
+
+
     </fieldset>
 
 </form>
