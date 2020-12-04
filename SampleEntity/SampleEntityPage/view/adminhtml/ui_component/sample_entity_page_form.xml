@@ -6,14 +6,13 @@
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">sample_entity_page_form.sample_entity_page_form_data_source</item>
-            <item name="namespace" xsi:type="string">sample_entity_page_form</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
 
     <settings>
         <buttons>
-            <button name="save" class="Magento\Catalog\Block\Adminhtml\Product\Edit\Button\CreateCategory"/>
+<!--            <button name="save" class="Magento\Catalog\Block\Adminhtml\Product\Edit\Button\CreateCategory"/>-->
             <button name="back" class="Magento\Catalog\Block\Adminhtml\Product\Edit\Button\Back"/>
         </buttons>
         <ajaxSaveType>simple</ajaxSaveType>
@@ -29,7 +28,7 @@
             </item>
         </argument>
         <settings>
-            <submitUrl path="catalog/category/save"/>
+            <submitUrl path="sampleentitypage/sampleentity/save"/>
         </settings>
         <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
                       name="sample_entity_page_form_data_source">
@@ -40,16 +39,39 @@
         </dataProvider>
     </dataSource>
 
-    <!--    <field name="name" sortOrder="10" formElement="input">-->
-    <!--        <settings>-->
-    <!--            <required>true</required>-->
-    <!--            <validation>-->
-    <!--                <rule name="required-entry" xsi:type="boolean">true</rule>-->
-    <!--            </validation>-->
-    <!--            <dataType>string</dataType>-->
-    <!--            <label translate="true">Name</label>-->
-    <!--            <dataScope>data.name</dataScope>-->
-    <!--            <componentType>field</componentType>-->
-    <!--        </settings>-->
-    <!--    </field>-->
+    <fieldset name="main_fieldset">
+        <settings>
+            <label translate="true">Edit Sample Entity</label>
+        </settings>
+        <fieldset name="fieldset_group">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Fields</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <item name="opened" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <field name="name">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Name</item>
+                        <item name="visible" xsi:type="boolean">true</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="type">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Type</item>
+                        <item name="visible" xsi:type="boolean">true</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
+    </fieldset>
+
 </form>

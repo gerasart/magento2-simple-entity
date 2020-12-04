@@ -20,20 +20,12 @@ class Remove extends Action
                 $model = $this->_objectManager->create(SampleEntity::class);
                 $model->load($id);
                 $model->delete();
-
-                $this->_eventManager->dispatch(
-                    'adminhtml_sample_entity_on_delete',
-                    [ 'status' => 'success']
-                );
-
+//                $this->_eventManager->dispatch(
+//                    'adminhtml_sample_entity_on_delete',
+//                    [ 'status' => 'success']
+//                );
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
-
-                $this->_eventManager->dispatch(
-                    'adminhtml_news_on_delete',
-                    [ 'status' => 'fail']
-                );
-
                 return $resultRedirect->setPath('*/*/edit', ['id' => $id]);
             }
         }

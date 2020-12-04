@@ -22,19 +22,8 @@ class Duplicate extends Action
                 $newModel->setId(null); // remove id
                 $newModel->isObjectNew(true); // set object as new
                 $newModel->getResource()->save($newModel); // save new model (clone)
-                $this->_eventManager->dispatch(
-                    'adminhtml_sample_entity_on_delete',
-                    ['status' => 'success']
-                );
-
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
-
-                $this->_eventManager->dispatch(
-                    'adminhtml_news_on_delete',
-                    ['status' => 'fail']
-                );
-
                 return $resultRedirect->setPath('*/*/edit', ['id' => $id]);
             }
         }
