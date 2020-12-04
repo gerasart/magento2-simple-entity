@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="SampleEntity_SampleEntityPage::sample" title="sample" translate="title" module="SampleEntity_SampleEntityPage" parent="Magento_Backend::content" sortOrder="50" dependsOnModule="SampleEntity_SampleEntityPage" resource="SampleEntity_SampleEntityPage::sample"/>
+        <add id="SampleEntity_SampleEntityPage::sample_sampleentity" title="Sample Entity" translate="title" module="SampleEntity_SampleEntityPage" parent="SampleEntity_SampleEntityPage::sample" sortOrder="10" dependsOnModule="SampleEntity_SampleEntityPage" action="sampleentitypage/sampleentity" resource="SampleEntity_SampleEntityPage::sample"/>
+    </menu>
+</config>
