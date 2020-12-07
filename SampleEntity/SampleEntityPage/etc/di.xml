@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- ContactsGridDataProvider -->
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="sample_entity_page_listing_data_source" xsi:type="string">SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntity\Grid\Collection</item>
-                <item name="sample_entity_page_form_data_source" xsi:type="string">SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntity\Grid\Collection</item>
+<!--                <item name="sample_entity_page_form_data_source" xsi:type="string">SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntity\Grid\Collection</item>-->
             </argument>
         </arguments>
     </type>
+
     <type name="SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntity\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">sample_entity</argument>

@@ -2,38 +2,38 @@
 
 namespace SampleEntity\SampleEntityPage\Api;
 
-interface SimpleEntityRepositoryInterface
+interface SampleEntityRepositoryInterface
 {
 
     /**
-     * Save simple_entity
+     * Save sample_entity
      *
-     * @param \SampleEntity\SampleEntityPage\Api\Data\SimpleEntityInterface $simple_entity
-     * @return \SampleEntity\SampleEntityPage\Api\Data\SimpleEntityInterface
+     * @param \SampleEntity\SampleEntityPage\Api\Data\SampleEntityInterface $sample_entity
+     * @return \SampleEntity\SampleEntityPage\Api\Data\SampleEntityInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function save(Data\SimpleEntityInterface $simple_entity);
+    public function save(Data\SampleEntityInterface $sample_entity);
 
     /**
-     * Retrieve simple_entity
+     * Retrieve sample_entity
      *
      * @param int $id
-     * @return \SampleEntity\SampleEntityPage\Api\Data\SimpleEntityInterface
+     * @return \SampleEntity\SampleEntityPage\Api\Data\SampleEntityInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function getById($id);
 
     /**
-     * Delete simple_entity
+     * Delete sample_entity
      *
-     * @param \SampleEntity\SampleEntityPage\Api\Data\SimpleEntityInterface $simple_entity
+     * @param \SampleEntity\SampleEntityPage\Api\Data\SampleEntityInterface $sample_entity
      * @return bool true on success
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function delete(Data\SimpleEntityInterface $simple_entity);
+    public function delete(Data\SampleEntityInterface $sample_entity);
 
     /**
-     * Delete simple_entity by ID
+     * Delete sample_entity by ID
      *
      * @param int $id
      * @return bool true on success

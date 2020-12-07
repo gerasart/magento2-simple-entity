@@ -6,7 +6,6 @@
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">sample_entity_page_form.sample_entity_page_form_data_source</item>
-            <item name="deps" xsi:type="string">sample_entity_page_form.sample_entity_page_form_data_source</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
 
@@ -25,6 +24,10 @@
                 <label translate="true">Back</label>
             </button>
         </buttons>
+
+        <deps>
+            <dep>sample_entity_page_form.sample_entity_page_form_data_source</dep>
+        </deps>
     </settings>
 
     <dataSource name="sample_entity_page_form_data_source">
@@ -33,7 +36,8 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
-        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
+
+        <dataProvider class="SampleEntity\SampleEntityPage\Ui\DataProvider\Form\DataProvider"
                       name="sample_entity_page_form_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
@@ -42,7 +46,7 @@
         </dataProvider>
     </dataSource>
 
-    <fieldset name="sample_entity">
+    <fieldset name="data">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="collapsible" xsi:type="boolean">false</item>

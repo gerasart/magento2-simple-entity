@@ -3,10 +3,10 @@
 namespace SampleEntity\SampleEntityPage\Model;
 
 use Magento\Framework\Model\AbstractModel;
-use SampleEntity\SampleEntityPage\Api\Data\SimpleEntityInterface;
+use SampleEntity\SampleEntityPage\Api\Data\SampleEntityInterface;
 use SampleEntity\SampleEntityPage\Model\ResourceModel\SampleEntityResource;
 
-class SampleEntity extends AbstractModel implements SimpleEntityInterface
+class SampleEntity extends AbstractModel implements SampleEntityInterface
 {
     protected function _construct()
     {

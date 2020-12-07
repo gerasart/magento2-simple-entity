@@ -4,7 +4,7 @@
 namespace SampleEntity\SampleEntityPage\Api\Data;
 
 
-interface SimpleEntityInterface
+interface SampleEntityInterface
 {
 
     /**
