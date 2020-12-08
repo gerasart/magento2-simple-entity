@@ -13,6 +13,10 @@ class DataProvider extends AbstractDataProvider
      */
     protected $collection;
 
+    /**
+     * @var array
+     */
+    protected $_loadedData;
 
     public function __construct(
         CollectionFactory $collectionFactory,
@@ -21,7 +25,8 @@ class DataProvider extends AbstractDataProvider
         $requestFieldName,
         array $meta = [],
         array $data = []
-    ) {
+    )
+    {
         parent::__construct(
             $name,
             $primaryFieldName,
@@ -35,10 +40,17 @@ class DataProvider extends AbstractDataProvider
 
     public function getData()
     {
-        if (!$this->getCollection()->isLoaded()) {
-            $this->getCollection()->load();
+
+        if (isset($this->_loadedData)) {
+            return $this->_loadedData;
         }
-//        var_dump($this->getCollection()->toArray());
-        return $this->getCollection()->toArray();
+
+        $items = $this->collection->getItems();
+
+        foreach ($items as $contact) {
+            $this->_loadedData[$contact->getId()] = $contact->getData();
+        }
+
+        return $this->_loadedData;
     }
 }

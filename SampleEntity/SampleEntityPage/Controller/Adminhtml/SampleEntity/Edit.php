@@ -9,11 +9,11 @@ namespace SampleEntity\SampleEntityPage\Controller\Adminhtml\SampleEntity {
 
     class Edit extends Action
     {
-
+        const ADMIN_RESOURCE = 'Index';
         /**
          * @var PageFactory
          */
-        protected $resultPageFactory;
+        protected PageFactory $resultPageFactory;
 
         public function __construct(
             Context $context,
@@ -25,7 +25,7 @@ namespace SampleEntity\SampleEntityPage\Controller\Adminhtml\SampleEntity {
 
         public function execute()
         {
-//            $id = $this->getRequest()->getParam('id');
+            $id = $this->getRequest()->getParam('id');
 //            $model = $this->_objectManager->create(SampleEntity::class);
 //            if ($id) {
 //                $model->load($id);
@@ -34,7 +34,7 @@ namespace SampleEntity\SampleEntityPage\Controller\Adminhtml\SampleEntity {
 //            $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
 
             $resultPage = $this->resultPageFactory->create();
-            $resultPage->getConfig()->getTitle()->prepend(__('Sample Entity Edit'));
+            $resultPage->getConfig()->getTitle()->prepend(__('Sample Entity Edit '.$id));
 
             return $resultPage;
         }
