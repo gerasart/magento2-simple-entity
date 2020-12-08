@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SampleEntity\SampleEntityPage\Ui\Component\Listing\Column;
-
 
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
@@ -33,8 +31,7 @@ class Actions extends Column
         UrlInterface $urlBuilder,
         array $components = [],
         array $data = []
-    )
-    {
+    ) {
         $this->urlBuilder = $urlBuilder;
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }

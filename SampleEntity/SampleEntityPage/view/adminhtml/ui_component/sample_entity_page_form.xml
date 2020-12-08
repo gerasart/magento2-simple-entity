@@ -8,12 +8,9 @@
             <item name="provider" xsi:type="string">sample_entity_page_form.sample_entity_page_form_data_source</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
-
-
         <item name="buttons" xsi:type="array">
             <item name="save" xsi:type="string">SampleEntity\SampleEntityPage\Block\Adminhtml\Buttons\Save</item>
         </item>
-
     </argument>
 
     <settings>
@@ -28,6 +25,7 @@
         <deps>
             <dep>sample_entity_page_form.sample_entity_page_form_data_source</dep>
         </deps>
+
     </settings>
 
     <dataSource name="sample_entity_page_form_data_source">
@@ -46,7 +44,7 @@
         </dataProvider>
     </dataSource>
 
-    <fieldset name="data">
+    <fieldset name="sample_entity_group">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="collapsible" xsi:type="boolean">false</item>
@@ -54,14 +52,14 @@
             </item>
         </argument>
 
-        <field name="name">
+
+        <field name="data.name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Name</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">sample_entity</item>
                 </item>
             </argument>
         </field>
@@ -69,15 +67,13 @@
         <field name="type">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string">Type</item>
+                    <item name="label" xsi:type="string" translate="true">Type</item>
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">sample_entity</item>
                 </item>
             </argument>
         </field>
-
 
     </fieldset>
 

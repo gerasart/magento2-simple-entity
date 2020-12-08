@@ -10,10 +10,19 @@ interface SampleEntityInterface
     /**
      * Constants for keys of data array.
      */
+    const ID = 'id';
     const NAME = 'name';
     const TYPE = 'type';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+
+
+    /**
+     * Get id
+     *
+     * @return id
+     */
+    public function getId();
 
     /**
      * Get name

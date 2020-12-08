@@ -13,6 +13,11 @@ class SampleEntity extends AbstractModel implements SampleEntityInterface
         $this->_init(SampleEntityResource::class);
     }
 
+    public function getId()
+    {
+        return $this->getData(self::ID);
+    }
+
     public function getName()
     {
         return $this->getData(self::NAME);

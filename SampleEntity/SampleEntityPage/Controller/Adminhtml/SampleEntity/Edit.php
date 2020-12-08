@@ -1,19 +1,42 @@
 <?php
 
+namespace SampleEntity\SampleEntityPage\Controller\Adminhtml\SampleEntity {
 
-namespace SampleEntity\SampleEntityPage\Controller\Adminhtml\SampleEntity;
+    use Magento\Backend\App\Action;
+    use Magento\Backend\App\Action\Context;
+    use Magento\Framework\View\Result\PageFactory;
+    use SampleEntity\SampleEntityPage\Model\SampleEntity;
 
-
-use Magento\Backend\App\Action;
-use Magento\Framework\App\ResponseInterface;
-use Magento\Framework\Controller\ResultFactory;
-
-class Edit extends Action
-{
-
-    public function execute()
+    class Edit extends Action
     {
-//        $rowId = (int) $this->getRequest()->getParam('id');
-        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+
+        /**
+         * @var PageFactory
+         */
+        protected $resultPageFactory;
+
+        public function __construct(
+            Context $context,
+            PageFactory $resultPageFactory
+        ) {
+            $this->resultPageFactory = $resultPageFactory;
+            parent::__construct($context);
+        }
+
+        public function execute()
+        {
+//            $id = $this->getRequest()->getParam('id');
+//            $model = $this->_objectManager->create(SampleEntity::class);
+//            if ($id) {
+//                $model->load($id);
+//            }
+
+//            $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+
+            $resultPage = $this->resultPageFactory->create();
+            $resultPage->getConfig()->getTitle()->prepend(__('Sample Entity Edit'));
+
+            return $resultPage;
+        }
     }
 }
