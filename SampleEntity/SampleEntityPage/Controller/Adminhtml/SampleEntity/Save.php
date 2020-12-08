@@ -13,7 +13,7 @@ class Save extends Action
 
         $id = $this->getRequest()->getParam('id');
         $model = $this->_objectManager->create(SampleEntity::class);
-
+        $resultRedirect = $this->resultRedirectFactory->create();
         if ($id) {
             $model->load($id);
         }
@@ -23,6 +23,7 @@ class Save extends Action
         try {
             $model->save();
             $this->messageManager->addSuccessMessage(__('You saved this Post.'));
+            return $resultRedirect->setPath('*/*/edit', ['id' => $id]);
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
         } catch (\RuntimeException $e) {

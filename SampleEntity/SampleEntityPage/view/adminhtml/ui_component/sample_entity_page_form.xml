@@ -35,6 +35,10 @@
             </item>
         </argument>
 
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+
         <dataProvider class="SampleEntity\SampleEntityPage\Ui\DataProvider\Form\DataProvider"
                       name="sample_entity_page_form_data_source">
             <settings>
